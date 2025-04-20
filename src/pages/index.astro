@@ -1,0 +1,46 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1 class="font-bold">Olá, precisando de ajuda com seu negócio?</h1>
+			<br>
+			<h5 class="font-bold">Transforme Suas Ideias em Soluções Digitais de Alto Impacto</h5>
+			<p>
+				Seja bem-vindo! Você está procurando a solução para algum problema recorrente do seu negócio ou querendo criar um produto do zero? Então você veio ao lugar certo,
+				aqui quem fala é o Christian, engenheiro de software com ampla experiência em criar aplicações web e sistemas que atendem às necessidades de empresas e indivíduos, 
+				seja para otimizar processos internos, lançar novos produtos ou simplesmente melhorar a experiência do usuário.
+			</p>
+			<h5 class="font-bold">O Que Eu Faço:</h5>
+			<p>
+				Como engenheiro Full-Stack, eu cuido de todas as etapas do desenvolvimento de software, desde o planejamento e design até a 
+				implementação e manutenção. A experiência com tecnologias front-end e back-end me permite criar sistemas robustos, escaláveis e fáceis de usar, 
+				proporcionando uma experiência de ponta a ponta para seus usuários.
+			</p>
+			<h5 class="font-bold">Como Posso Ajudar Sua Empresa:</h5>
+			<ul class="pl-5 list-disc">
+				<li><b>Desenvolvimento Web Personalizado:</b> Criação de sites e sistemas sob medida para atender aos seus objetivos.</li>
+				<li><b>Automação de Processos:</b> Otimize operações com soluções tecnológicas que diminuem o trabalho manual e aumentam a produtividade.</li>
+				<li><b>Integração de Sistemas:</b> Sistemas que se conectam de maneira eficiente com suas ferramentas e plataformas existentes.</li>
+				<li><b>Consultoria e Suporte Técnico:</b> Orientação especializada e manutenção contínua para garantir que sua solução se mantenha sempre atualizada e segura.</li>
+			</ul>
+			<h5 class="font-bold">Por Que Me Escolher?</h5>
+			<p>
+				Com conhecimento profundo em sistemas de larga escala do setor financeiro, 
+				posso entregar soluções completas, eficientes, seguras e com excelente desempenho. 
+				Isso se traduz em mais agilidade, menos custos e uma vantagem competitiva para sua empresa/negocio.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
