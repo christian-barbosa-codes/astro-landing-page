@@ -36,5 +36,6 @@
     "preview": "astro build && wrangler dev",
     "types": "wrangler types"
   },
-  "type": "module"
+  "type": "module",
+  "packageManager": "yarn@1.22.22"
 }
