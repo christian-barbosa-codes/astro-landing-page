@@ -13,49 +13,56 @@ const iconSize = 100;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
 
-	<body>
-		<Header />
-		<main>
-			<a
-				href="https://linkedin.com/in/christian-barbosa-54b609330"
-				target="_blank"
-				class="contact-icon"
-			>
-				<LinkedinIcon width={iconSize} height={iconSize} />
-			</a>
+  <body>
+    <Header />
+    <main>
+      <a
+        href="https://linkedin.com/in/christian-barbosa-54b609330"
+        target="_blank"
+        class="contact-icon"
+      >
+        <LinkedinIcon width={iconSize} height={iconSize} />
+      </a>
 
-			<WhatsappIcon
-				class="contact-icon"
-				width={iconSize}
-				height={iconSize}
-				onclick="{window.contactInfoModal.showModal()}"
-			/>
+      <WhatsappIcon
+        class="contact-icon"
+        width={iconSize}
+        height={iconSize}
+        onclick="{window.contactInfoModal.showModal()}"
+      />
 
-			<EmailIcon
-				class="contact-icon"
-				width={iconSize}
-				height={iconSize}
-				onclick="{window.contactInfoModal.showModal()}"
-			/>
-			<ContactInfoModal contactInfo="teste" />
-		</main>
-		<Footer />
-	</body>
+      <EmailIcon
+        class="contact-icon"
+        width={iconSize}
+        height={iconSize}
+        onclick="{window.contactInfoModal.showModal()}"
+      />
+      <div id="cf-turnstile"></div>
+      <ContactInfoModal contactInfo="teste" />
+    </main>
+    <Footer />
+  </body>
 </html>
 
 <style>
-	.contact-icon {
-		margin: 1rem auto 1rem;
-		border-radius: 10px;
-		display: block;
-		width: fit-content;
-	}
-	.contact-icon:hover {
-		box-shadow: 0 0 11px var(--accent);
-		cursor: pointer;
-	}
+  .contact-icon {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    display: block;
+    width: fit-content;
+  }
+  .contact-icon:hover {
+    box-shadow: 0 0 11px var(--accent);
+    cursor: pointer;
+  }
+  #cf-turnstile {
+    display: flex;
+    justify-content: center;
+  }
 </style>

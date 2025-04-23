@@ -2,78 +2,76 @@
 const { contactInfo } = Astro.props;
 
 interface Props {
-    contactInfo: string;
+  contactInfo: string;
 }
 ---
 
 <dialog id="contactInfoModal">
-    <p id="contactInfoElement">{contactInfo}</p>
-    <hr />
-    <div>
-        <button
-            id="copy-button"
-            class="ring-green-400 hover:ring-green-800 ring-4">Copiar</button
-        >
-        <button id="close-button" class="ring-red-400 hover:ring-red-800 ring-4"
-            >Fechar</button
-        >
-    </div>
+  <p id="contactInfoElement">{contactInfo}</p>
+  <hr />
+  <div>
+    <button id="copy-button" class="ring-green-400 hover:ring-green-800 ring-4"
+      >Copiar</button
+    >
+    <button id="close-button" class="ring-red-400 hover:ring-red-800 ring-4"
+      >Fechar</button
+    >
+  </div>
 </dialog>
 
 <style lang="scss">
-    p {
-        text-align: center;
-        margin-bottom: 0;
-    }
-    div {
-        display: flex;
-        justify-content: space-between;
-    }
-    dialog {
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        position: absolute;
-        width: auto;
-        max-width: 320px;
-        margin: auto;
-        border-radius: 10px;
-        padding: 10px;
-    }
-    dialog::backdrop {
-        background-color: rgba(0, 0, 0, 0.812);
-    }
-    button {
-        text-align: center;
-        width: 70px;
-        background-color: white;
-        border-radius: 5px;
-        padding: 5px;
-        margin-top: 10px;
-    }
-    button:hover {
-        background-color: rgba(0, 0, 0, 0.07);
-    }
+  p {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+  dialog {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    width: auto;
+    max-width: 320px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.812);
+  }
+  button {
+    text-align: center;
+    width: 70px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+  }
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.07);
+  }
 </style>
 
 <script>
-    const copyButton = document.getElementById("copy-button");
-    const closeButton = document.getElementById("close-button");
-    const modal = document.getElementById(
-        "contactInfoModal",
-    ) as HTMLDialogElement;
-    const copyButtonDefaultText = copyButton?.innerHTML;
+  const copyButton = document.getElementById("copy-button");
+  const closeButton = document.getElementById("close-button");
+  const modal = document.getElementById(
+    "contactInfoModal"
+  ) as HTMLDialogElement;
+  const copyButtonDefaultText = copyButton?.innerHTML;
 
-    copyButton?.addEventListener("click", () => {
-        const contactInfoElement =
-            document.getElementById("contactInfoElement");
-        navigator.clipboard.writeText(contactInfoElement?.innerHTML ?? "");
-        copyButton.innerHTML = "&#10003;";
-        setTimeout(() => {
-            modal?.close();
-            copyButton.innerHTML = copyButtonDefaultText!;
-        }, 1000);
-    });
-    closeButton?.addEventListener("click", () => modal?.close());
+  copyButton?.addEventListener("click", () => {
+    const contactInfoElement = document.getElementById("contactInfoElement");
+    navigator.clipboard.writeText(contactInfoElement?.innerHTML ?? "");
+    copyButton.innerHTML = "&#10003;";
+    setTimeout(() => {
+      modal?.close();
+      copyButton.innerHTML = copyButtonDefaultText!;
+    }, 1000);
+  });
+  closeButton?.addEventListener("click", () => modal?.close());
 </script>
