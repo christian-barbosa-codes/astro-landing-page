@@ -16,7 +16,6 @@ const iconSize = 100;
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-
   <body>
     <Header />
     <main>
@@ -27,22 +26,19 @@ const iconSize = 100;
       >
         <LinkedinIcon width={iconSize} height={iconSize} />
       </a>
-
       <WhatsappIcon
+        id="whatsapp-contact-icon"
         class="contact-icon"
         width={iconSize}
         height={iconSize}
-        onclick="{window.contactInfoModal.showModal()}"
       />
-
       <EmailIcon
+        id="email-contact-icon"
         class="contact-icon"
         width={iconSize}
         height={iconSize}
-        onclick="{window.contactInfoModal.showModal()}"
       />
-      <div id="cf-turnstile"></div>
-      <ContactInfoModal contactInfo="teste" />
+      <ContactInfoModal id="contact-info-modal" contactInfo="teste" />
     </main>
     <Footer />
   </body>
@@ -61,8 +57,20 @@ const iconSize = 100;
     box-shadow: 0 0 11px var(--accent);
     cursor: pointer;
   }
-  #cf-turnstile {
+  .cf-turnstile {
     display: flex;
     justify-content: center;
   }
 </style>
+
+<script>
+  const contactInfoModal = document.getElementById("contact-info-modal") as HTMLDialogElement;
+  const securedContactIcons = [document.getElementById("whatsapp-contact-icon"),document.getElementById("email-contact-icon")]
+  securedContactIcons.forEach((icon) => {
+    icon?.addEventListener("click", () => {
+      const p = contactInfoModal.querySelector('p') 
+      if (p) p.innerHTML = icon.id === "whatsapp-contact-icon" ? "64984262415" : "christian.barbosa.dev@gmail.com";
+      contactInfoModal.showModal();
+    });
+  });
+</script>
