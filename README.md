@@ -1,1 +1,1 @@
-# Projetinho em astro para minha landing page
+# Landing page for my brand
